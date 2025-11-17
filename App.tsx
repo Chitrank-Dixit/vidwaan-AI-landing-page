@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 
 const Logo = () => (
   <div className="flex items-center space-x-2">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-blue-500">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-orange-500">
       <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -47,7 +47,7 @@ const Header: React.FC = () => {
                 <a href="#"><Logo /></a>
                 <nav className="hidden md:flex items-center space-x-8">
                     {navLinks.map((link) => (
-                        <a key={link.name} href={link.href} className="text-slate-600 hover:text-blue-600 transition-colors duration-300 font-medium">
+                        <a key={link.name} href={link.href} className="text-slate-600 hover:text-orange-600 transition-colors duration-300 font-medium">
                             {link.name}
                         </a>
                     ))}
@@ -67,7 +67,7 @@ const Header: React.FC = () => {
                 <div className="md:hidden bg-white shadow-lg">
                     <nav className="flex flex-col items-center space-y-4 py-4">
                         {navLinks.map((link) => (
-                            <a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)} className="text-slate-600 hover:text-blue-600 transition-colors duration-300 font-medium text-lg">
+                            <a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)} className="text-slate-600 hover:text-orange-600 transition-colors duration-300 font-medium text-lg">
                                 {link.name}
                             </a>
                         ))}
@@ -82,7 +82,7 @@ const Header: React.FC = () => {
 };
 
 const Hero: React.FC = () => (
-    <section className="bg-blue-50 py-20 md:py-32">
+    <section className="bg-yellow-50 py-20 md:py-32">
         <div className="container mx-auto px-6 text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-slate-800 mb-4 leading-tight">
                 Unlock the Wisdom of the Ages
@@ -94,7 +94,7 @@ const Hero: React.FC = () => (
                 Begin Your Journey
             </a>
             <div className="mt-16">
-              <img src="https://picsum.photos/seed/vidwaan/1200/600" alt="Vedic scriptures illustration" className="w-full max-w-5xl mx-auto rounded-2xl shadow-2xl object-cover" />
+              <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=1200&auto=format&fit=crop" alt="Person watching the sunrise over the Himalayas" className="w-full max-w-5xl mx-auto rounded-2xl shadow-2xl object-cover" />
             </div>
         </div>
     </section>
@@ -136,9 +136,9 @@ const Features: React.FC = () => {
 
     const featureColors = [
         "bg-orange-100 text-orange-600",
-        "bg-blue-100 text-blue-600",
         "bg-yellow-100 text-yellow-600",
-        "bg-teal-100 text-teal-600",
+        "bg-orange-100 text-orange-600",
+        "bg-yellow-100 text-yellow-600",
     ];
 
     return (
@@ -180,7 +180,7 @@ const HowItWorks: React.FC = () => {
             description: "Get a clear, concise, and well-sourced answer in seconds, complete with context."
         }
     ];
-    const stepColors = ["bg-blue-500", "bg-yellow-500", "bg-orange-500"];
+    const stepColors = ["bg-orange-400", "bg-yellow-500", "bg-orange-500"];
 
     return (
         <section id="how-it-works" className="py-20 bg-white">
@@ -302,7 +302,7 @@ const Footer: React.FC = () => (
             <div className="grid md:grid-cols-3 gap-8">
                 <div>
                     <a href="#" className="flex items-center space-x-2 mb-4">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-blue-400">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-orange-400">
                           <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -315,16 +315,16 @@ const Footer: React.FC = () => (
                     <div>
                         <h4 className="font-semibold text-white mb-4">Links</h4>
                         <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-blue-400 transition-colors">About Us</a></li>
-                            <li><a href="#" className="hover:text-blue-400 transition-colors">Contact</a></li>
-                            <li><a href="#" className="hover:text-blue-400 transition-colors">Pricing</a></li>
+                            <li><a href="#" className="hover:text-orange-400 transition-colors">About Us</a></li>
+                            <li><a href="#" className="hover:text-orange-400 transition-colors">Contact</a></li>
+                            <li><a href="#" className="hover:text-orange-400 transition-colors">Pricing</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 className="font-semibold text-white mb-4">Legal</h4>
                         <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" className="hover:text-blue-400 transition-colors">Terms of Service</a></li>
+                            <li><a href="#" className="hover:text-orange-400 transition-colors">Privacy Policy</a></li>
+                            <li><a href="#" className="hover:text-orange-400 transition-colors">Terms of Service</a></li>
                         </ul>
                     </div>
                 </div>
