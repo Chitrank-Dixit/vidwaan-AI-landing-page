@@ -30,6 +30,10 @@ const ChevronDownIcon = () => (
     <svg className="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
 );
 
+const CheckIcon = () => (
+    <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+);
+
 
 // --- UI Components ---
 
@@ -38,6 +42,7 @@ const Header: React.FC = () => {
     const navLinks = [
         { name: "Features", href: "#features" },
         { name: "How It Works", href: "#how-it-works" },
+        { name: "Pricing", href: "#pricing" },
         { name: "FAQ", href: "#faq" },
     ];
 
@@ -226,6 +231,91 @@ const QuoteSection: React.FC = () => (
     </section>
 );
 
+const Pricing: React.FC = () => {
+    const plans = [
+        {
+            name: 'Seeker',
+            price: '$0',
+            period: '/ month',
+            description: 'For casual exploration and getting started.',
+            features: [
+                '10 questions per day',
+                'Standard access to scriptures',
+                'Community support'
+            ],
+            buttonText: 'Start for Free',
+            isPopular: false,
+        },
+        {
+            name: 'Scholar',
+            price: '$9',
+            period: '/ month',
+            description: 'For dedicated learners and researchers.',
+            features: [
+                'Unlimited questions',
+                'Full access to all scriptures',
+                'Save conversation history',
+                'Priority email support'
+            ],
+            buttonText: 'Choose Scholar',
+            isPopular: true,
+        },
+        {
+            name: 'Guru',
+            price: 'Custom',
+            period: '',
+            description: 'For institutions and academic use.',
+            features: [
+                'Everything in Scholar',
+                'API Access',
+                'Dedicated support',
+                'Custom integrations'
+            ],
+            buttonText: 'Contact Us',
+            isPopular: false,
+        }
+    ];
+
+    return (
+        <section id="pricing" className="py-20 bg-slate-50">
+            <div className="container mx-auto px-6">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-slate-800">Find the Plan for Your Journey</h2>
+                    <p className="text-lg text-slate-600 mt-4 max-w-2xl mx-auto">Start for free, and upgrade when you're ready to dive deeper.</p>
+                </div>
+                <div className="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    {plans.map(plan => (
+                        <div key={plan.name} className={`bg-white rounded-2xl p-8 shadow-lg flex flex-col relative ${plan.isPopular ? 'border-2 border-orange-500' : ''}`}>
+                            {plan.isPopular && (
+                                <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase">Most Popular</div>
+                            )}
+                            <h3 className="text-2xl font-bold text-slate-800 mb-2">{plan.name}</h3>
+                            <p className="text-slate-600 mb-6">{plan.description}</p>
+                            <div className="mb-6">
+                                <span className="text-5xl font-bold text-slate-900">{plan.price}</span>
+                                <span className="text-slate-500 font-medium">{plan.period}</span>
+                            </div>
+                            <ul className="space-y-4 mb-8 text-slate-600">
+                                {plan.features.map(feature => (
+                                    <li key={feature} className="flex items-center space-x-3">
+                                        <CheckIcon />
+                                        <span>{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                            <div className="mt-auto">
+                                <a href="#" className={`w-full text-center font-bold py-3 px-6 rounded-lg transition-all duration-300 inline-block ${plan.isPopular ? 'bg-orange-500 text-white hover:bg-orange-600 shadow-md' : 'bg-slate-200 text-slate-800 hover:bg-slate-300'}`}>
+                                    {plan.buttonText}
+                                </a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
+
 interface FaqItemProps {
     question: string;
     answer: string;
@@ -346,6 +436,7 @@ function App() {
         <Features />
         <HowItWorks />
         <QuoteSection />
+        <Pricing />
         <FAQ />
       </main>
       <Footer />
